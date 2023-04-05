@@ -24,8 +24,8 @@ public class Main {
 		
 		System.out.println(firstName + " " + lastName + " " + jobTitle + " " + salary + ".");
 		
-		
-		
+		Employee one = new Employee(firstName, lastName, jobTitle, salary);
+		System.out.print(one);
 		
 
 	}
