@@ -22,10 +22,13 @@ public class Main {
 		
 		scanner.close();
 		
-		System.out.println(firstName + " " + lastName + " " + jobTitle + " " + salary + ".");
+		//System.out.println(firstName + " " + lastName + " " + jobTitle + " " + salary + ".");
 		
 		Employee one = new Employee(firstName, lastName, jobTitle, salary);
-		System.out.print(one);
+		one.getFullName();
+		one.getTitle();
+		one.getSalary();
+		
 		
 
 	}
