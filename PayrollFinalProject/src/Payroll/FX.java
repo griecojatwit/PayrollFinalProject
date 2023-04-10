@@ -7,7 +7,7 @@ public class FX extends Application {
 @Override
 	
 public void start (Stage s) {
-		s.setWidth(800);
+		s.setWidth(1200);
 		s.setHeight(600);
 		s.show();
 	}
