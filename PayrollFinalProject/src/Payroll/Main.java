@@ -17,7 +17,6 @@ public class Main extends Application {
 	String title;
 	double pay;
 	ArrayList<Employee> employeeArr = new ArrayList<Employee>();
-	Scanner input = new Scanner(System.in);
 	
 @Override
 	
@@ -36,25 +35,55 @@ public void start (Stage s) {
 	btnA.setOnAction(e->{
 		
 		count++;
-		System.out.printf("Please enter first name: %n");
+		
+		System.out.printf("Please enter first name: ");
+		Scanner input = new Scanner(System.in);
 		first = input.nextLine();
-		System.out.printf("Please enter last name: %n");
+		
+		System.out.printf("Please enter last name: ");
 		last = input.nextLine();
-		System.out.printf("Please enter title name: %n");
+		
+		System.out.printf("Please enter title name: ");
 		title = input.nextLine();
-		System.out.printf("Please enter salary: %n");
+		
+		System.out.printf("Please enter salary: ");
 		pay = input.nextDouble();
 		
 		employeeArr.add(new Employee(first, last, title, pay));
 		
+		
 	});
 		
 	btnE.setOnAction(e->{
+		Scanner input = new Scanner(System.in);
+		int num = 0;
 		
+		System.out.printf("Which employee would you like to edit: ");
+		num = input.nextInt();
+		num -= 1;
+		
+		
+		System.out.printf("Please enter first name: ");
+		Scanner in = new Scanner(System.in);
+		first = in.nextLine();
+		
+		System.out.printf("Please enter last name: ");
+		last = in.nextLine();
+		
+		System.out.printf("Please enter title name: ");
+		title = in.nextLine();
+		
+		System.out.printf("Please enter salary: ");
+		pay = in.nextDouble();
+		
+		employeeArr.get(num).editName(first, last);
+		employeeArr.get(num).editTitle(title);
+		employeeArr.get(num).editPay(pay);
 	});
 		
 	btnV.setOnAction(e->{
 		for (int i = 0; i < employeeArr.size(); i++) {
+			System.out.printf("%n%d.%n", i + 1);
 			employeeArr.get(i).getFullName();
 			employeeArr.get(i).getTitle();
 			employeeArr.get(i).getSalary();

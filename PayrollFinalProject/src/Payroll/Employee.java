@@ -15,11 +15,11 @@ public class Employee {
 	}
 	
 	public void getFullName() {
-		System.out.println(first + " " + last);
+		System.out.println("Name: " + first + " " + last);
 	}
 	
 	public void getTitle() {
-		System.out.println(title);
+		System.out.println("Title: " + title);
 	}
 	
 	public void getSalary() {
