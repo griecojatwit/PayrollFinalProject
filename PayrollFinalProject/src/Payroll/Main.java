@@ -1,38 +1,41 @@
 package Payroll;
-import java.util.Scanner;
 
-public class Main {
+import javafx.application.*;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+import javafx.stage.*;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class Main extends Application {
+@Override
+	
+public void start (Stage s) {
+			
+		final HBox pane = new HBox(100);
+		pane.setAlignment(Pos.CENTER);
+		final Button btnP = new Button("Add");
+		final Button btnM = new Button("Mama");
+		final Button btnB = new Button("Baby");
+		pane.getChildren().addAll(btnP, btnM, btnB);
+		s.setTitle("Goldilocks and the Three Buttons");
+		s.setScene(new Scene(pane));
+		s.show();
 		
-		// Add button to add new employee
-		System.out.println("Enter employees first name: ");
-		Scanner scanner = new Scanner(System.in);
-		String firstName = scanner.nextLine();
+		btnP.setOnAction(e->{
+			System.out.printf("Too Hot!%n");
+		});
 		
-		System.out.println("Enter employees last name: ");
-		String lastName = scanner.nextLine();
+		btnM.setOnAction(e->{
+			System.out.printf("Too Cold!%n");
+		});
 		
-		System.out.println("Enter employees job title: ");
-		String jobTitle = scanner.nextLine();
-		
-		System.out.println("Enter employees salary: ");
-		double salary = scanner.nextDouble();
-		
-		scanner.close();
-		
-		
-		
-		Employee one = new Employee(firstName, lastName, jobTitle, salary);
-		one.getFullName();
-		one.getTitle();
-		one.getSalary();
-		
-		
-		
-		
-
+		btnB.setOnAction(e->{
+			System.out.printf("Just Right!%n");
+		});
 	}
 
+	public static void main(String[] args ) {
+		launch(args);
+	}
 }
